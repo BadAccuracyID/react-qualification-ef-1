@@ -3,7 +3,7 @@ import {gql} from "@apollo/client";
 export const GET_ALL_PLAYERS = gql`
     query players($pageNumber: Int, $limit: Int) {
         players(pageNumber: $pageNumber, limit: $limit) {
-            players {
+             items {
                 id
                 name
                 stats {
