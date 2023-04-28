@@ -2,7 +2,6 @@
   "name": "react-qualification-ef-1",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
   "dependencies": {
     "@apollo/client": "^3.7.12",
     "@testing-library/jest-dom": "^5.16.5",
@@ -16,7 +15,6 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
-    "particles.js": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-particles": "^2.9.3",
