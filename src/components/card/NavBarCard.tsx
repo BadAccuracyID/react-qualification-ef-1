@@ -3,7 +3,7 @@ import React from "react";
 
 export default function NavBarCard() {
     return (
-        <nav className="flex items-center justify-between px-6 py-4">
+        <nav className="flex items-center justify-between px-6 py-4 bg-blue-950">
             <ul className="flex items-center space-x-8">
                 <li>
                     <img
