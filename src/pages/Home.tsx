@@ -28,7 +28,7 @@ export default function Home() {
                     <Link to={'/player'}>
                         <button
                             className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-purple-600 hover:bg-purple-500 rounded-full transition-colors duration-300">
-                            View Player Stats
+                            Check Player Stats
                         </button>
                     </Link>
                 </section>
