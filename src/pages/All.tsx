@@ -17,6 +17,24 @@ export default function All() {
         }
     })
 
+    let count = 0;
+
+    const nextPage = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (count < 10) {
+            return;
+        }
+        setPage(page + 1);
+    }
+
+    const prevPage = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (page === 0) {
+            return;
+        }
+        setPage(page - 1);
+    }
+
     if (loading) {
         return (
             <div className="bg-blue-900 text-white">
@@ -53,9 +71,32 @@ export default function All() {
             {/* Navigation */}
             <NavBarCard/>
 
-            <section className="grid grid-cols-1 gap-6 justify-items-center h-max p-8">
+            {/* Main Section */}
+            <section className="grid grid-cols-1 gap-6 justify-items-center min-h-screen h-max p-8">
+                <div>
+                    <h1 className="text-4xl font-bold pb-4">All Players</h1>
+
+                    <div className="bg-blue-950 rounded-md flex flex-row justify-center items-center gap-4 max-h-10">
+                        <button
+                            className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-l"
+                            onClick={prevPage}
+                        >
+                            &lt;
+                        </button>
+                        <p className="text-l font-bold">Page: {page + 1} / {data.players.totalCount % 10 + 1}</p>
+                        <button
+                            className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-r"
+                            onClick={nextPage}
+                        >
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+
+
                 {
                     data.players.items.map((player: any) => {
+                        count++;
                         return (
                             <div key={player.id}>
                                 <PlayerStatsCard
@@ -74,7 +115,6 @@ export default function All() {
                     })
                 }
             </section>
-
 
             {/* Footer */}
             <FooterCard/>

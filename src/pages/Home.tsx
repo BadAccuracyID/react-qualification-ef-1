@@ -13,7 +13,7 @@ export default function Home() {
             {/* Navigation */}
             <NavBarCard/>
 
-            {/* Main section */}
+            {/* Main Section */}
             <section className="flex flex-col items-center justify-center h-screen px-6 sm:px-0">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-center">
                     Welcome to Stats Viewer
@@ -25,13 +25,13 @@ export default function Home() {
                     className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                     <Link to={'/all'}>
                         <button
-                            className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-gray-800 hover:bg-purple-700 rounded-full transition-colors duration-300">
+                            className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-blue-950 hover:bg-purple-700 rounded-full transition-colors duration-300">
                             View All Stats
                         </button>
                     </Link>
-                    <Link to={'/player'}>
+                    <Link to={'/search'}>
                         <button
-                            className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-gray-800 hover:bg-purple-700 rounded-full transition-colors duration-300">
+                            className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-blue-950 hover:bg-purple-700 rounded-full transition-colors duration-300">
                             Check Player Stats
                         </button>
                     </Link>
