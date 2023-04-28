@@ -6,6 +6,7 @@ import LoadingCard from "../components/card/LoadingCard";
 import ErrorCard from "../components/card/ErrorCard";
 import FooterCard from "../components/card/FooterCard";
 import {PlayerStatsCard} from "../components/card/PlayerDataCard";
+import ParticleBackground from "../components/background/ParticleBackground";
 
 export default function All() {
     const [page, setPage] = useState(0);
@@ -45,7 +46,10 @@ export default function All() {
     }
 
     return (
-        <div className="bg-blue-900 text-white">
+        <div className="bg-transparent text-white">
+            {/* Particle Background */}
+            <ParticleBackground/>
+
             {/* Navigation */}
             <NavBarCard/>
 

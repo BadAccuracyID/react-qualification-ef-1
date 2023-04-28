@@ -7,6 +7,7 @@ import FooterCard from "../components/card/FooterCard";
 import ErrorCard from "../components/card/ErrorCard";
 import React from "react";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
+import ParticleBackground from "../components/background/ParticleBackground";
 
 export default function PlayerDetail() {
     const {playerId} = useParams();
@@ -47,11 +48,14 @@ export default function PlayerDetail() {
 
     let playerById = data.playerById;
     return (
-        <div className="bg-blue-900 text-white">
+        <div className="bg-transparent text-white">
+            {/* Particle Background */}
+            <ParticleBackground/>
+
             {/* Navigation */}
             <NavBarCard/>
 
-            <section className="grid grid-cols-1 gap-6 justify-items-center h-max p-8">
+            <section className="flex flex-col items-center justify-center min-h-screen h-max px-6 sm:px-0 py-8">
                 {
                     <div key={playerById.id}>
                         <PlayerDetailsCard

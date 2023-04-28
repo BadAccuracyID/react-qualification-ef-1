@@ -1,11 +1,15 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import NavBarCard from "../components/card/NavBarCard";
 import FooterCard from "../components/card/FooterCard";
+import ParticleBackground from "../components/background/ParticleBackground";
+import {Link} from "react-router-dom";
 
 export default function Home() {
     return (
-        <div className="bg-blue-900 text-white">
+        <div className="bg-transparent text-white">
+            {/* Particle Background */}
+            <ParticleBackground/>
+
             {/* Navigation */}
             <NavBarCard/>
 

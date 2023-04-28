@@ -4,6 +4,7 @@ import {useQuery} from "@apollo/client";
 import React, {useState} from "react";
 import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
+import ParticleBackground from "../components/background/ParticleBackground";
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +26,10 @@ export default function Search() {
     }
 
     return (
-        <div className="bg-blue-900 text-white">
+        <div className="bg-transparent text-white">
+            {/* Particle Background */}
+            <ParticleBackground/>
+
             {/* Navigation */}
             <NavBarCard/>
 

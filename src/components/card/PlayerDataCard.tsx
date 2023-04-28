@@ -12,9 +12,10 @@ export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, a
     money: number
 }) {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 rounded-md shadow-lg text-white">
+        <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white">
             <div
-                className="bg-blue-950 rounded-t-md rounded-b-md p-8 flex items-center justify-center">
+                className="rounded-t-md rounded-b-md p-8 flex items-center justify-center">
                 <img
                     className="h-auto max-h-60 sm:max-h-full max-w-full object-cover"
                     src={image}
@@ -60,7 +61,7 @@ export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, a
             <button>
                 <Link to={`/player/${id}`}>
                     <div
-                        className="bg-blue-950 rounded-b-md sm:rounded-r-md sm:rounded-b-none p-8 flex items-center justify-center sm:justify-end">
+                        className="rounded-b-md sm:rounded-r-md sm:rounded-b-none p-8 flex items-center justify-center sm:justify-end h-max">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
@@ -87,9 +88,9 @@ export function PlayerDetailsCard({id, name, image, motto, instagram, wins, loss
 }) {
     return (
         <div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 rounded-md shadow-lg text-white justify-center justify-items-center">
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center">
             <div
-                className="bg-blue-950 rounded-t-md sm:rounded-l-md sm:rounded-t-none sm:rounded-b-md p-8 pb-2 sm:pb-8 flex items-center justify-center sm:justify-start">
+                className="rounded-t-md sm:rounded-l-md sm:rounded-t-none sm:rounded-b-md p-8 pb-2 sm:pb-8 flex items-center justify-center sm:justify-start">
                 <img
                     className="h-auto w-full object-cover rounded-t-md sm:rounded-l-md sm:rounded-t-none sm:rounded-b-none"
                     src={image}
