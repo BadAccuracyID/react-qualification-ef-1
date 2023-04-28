@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import All from "./pages/All";
 import PlayerDetail from "./pages/PlayerDetail";
+import Search from "./pages/Search";
 
 const httpLink = new HttpLink({
     uri: "http://localhost:8080/graphql", // Replace with your GraphQL API endpoint
@@ -25,6 +26,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/all" element={<All/>}/>
+                    <Route path="/search" element={<Search/>}/>
                     <Route path="/player/:playerId" element={<PlayerDetail/>}/>
                 </Routes>
             </BrowserRouter>

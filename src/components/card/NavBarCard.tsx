@@ -18,7 +18,7 @@ export default function NavBarCard() {
                 <Link to={'/all'}>
                     <li><a className="font-medium hover:text-gray-300">All Stats</a></li>
                 </Link>
-                <Link to={'/player'}>
+                <Link to={'/search'}>
                     <li><a className="font-medium hover:text-gray-300">Check Stats</a></li>
                 </Link>
             </ul>
