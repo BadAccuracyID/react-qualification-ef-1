@@ -1,34 +1,3 @@
-export function PlayerCard({id, name}: { id: string, name: string }) {
-    return (
-        <div className="flex flex-col items-center justify-center">
-            <h1 className="text-6xl font-bold mb-8">Player</h1>
-            <p className="text-xl">{id}</p>
-            <p className="text-xl">{name}</p>
-        </div>
-    )
-}
-
-export function StatsCard({wins, losses, kills, deaths, assists, money}: {
-    wins: number,
-    losses: number,
-    kills: number,
-    deaths: number,
-    assists: number,
-    money: number
-}) {
-    return (
-        <div className="flex flex-col items-center justify-center">
-            <h1 className="text-6xl font-bold mb-8">Stats</h1>
-            <p className="text-xl">{wins}</p>
-            <p className="text-xl">{losses}</p>
-            <p className="text-xl">{kills}</p>
-            <p className="text-xl">{deaths}</p>
-            <p className="text-xl">{assists}</p>
-            <p className="text-xl">{money}</p>
-        </div>
-    )
-}
-
 export function PlayerStatsCard({id, name, wins, losses, kills, deaths, assists, money}: {
     id: string,
     name: string,

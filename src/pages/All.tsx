@@ -44,8 +44,6 @@ export default function All() {
         )
     }
 
-    console.log(data.players.items)
-
     return (
         <div className="bg-blue-900 text-white">
             {/* Navigation */}
