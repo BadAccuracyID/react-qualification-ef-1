@@ -5,6 +5,7 @@ export const GET_PLAYER_DETAILS_BY_NAME = gql`
         playerByName(name: $name) {
             id
             name
+            avatar
             stats {
                 wins
                 losses
@@ -22,6 +23,9 @@ export const GET_PLAYER_DETAILS_BY_ID = gql`
         playerById(id: $id) {
             id
             name
+            motto
+            avatar
+            instagram
             stats {
                 wins
                 losses

@@ -57,7 +57,7 @@ export default function All() {
                                 <PlayerStatsCard
                                     id={player.id}
                                     name={player.name}
-                                    image={""}
+                                    image={player.avatar}
                                     wins={player.stats.wins}
                                     losses={player.stats.losses}
                                     kills={player.stats.kills}
