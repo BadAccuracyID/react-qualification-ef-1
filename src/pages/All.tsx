@@ -79,47 +79,49 @@ export default function All() {
 
             {/* Main Section */}
             <section className="grid grid-cols-1 gap-6 justify-items-center min-h-screen h-max p-8">
-                <div>
+                <div
+                    className="flex flex-col justify-center justify-items-center items-center h-max">
                     <h1 className="text-4xl font-bold pb-4 text-center">All Players</h1>
 
-                    <div className="bg-blue-950 rounded-md flex flex-row justify-center items-center gap-4 max-h-10">
+                    <div className="bg-blue-950 rounded-md flex flex-row justify-center items-center gap-4 w-max">
                         <button
                             className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-l"
-                            onClick={prevPage}
-                        >
+                            onClick={prevPage}>
                             &lt;
                         </button>
-                        <p className="text-l font-bold">Page: {page + 1} / {data.players.totalCount % 10 + 1}</p>
+                        <p className="text-l font-bold">Page: {page + 1} / {data.players.totalCount < 10 ? 1 : data.players.totalCount % 10 + 1}</p>
                         <button
                             className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-r"
-                            onClick={nextPage}
-                        >
+                            onClick={nextPage}>
                             &gt;
                         </button>
                     </div>
                 </div>
 
 
-                {
-                    data.players.items.map((player: any) => {
-                        count++;
-                        return (
-                            <div key={player.id}>
-                                <PlayerStatsCard
-                                    id={player.id}
-                                    name={player.name}
-                                    image={player.avatar}
-                                    wins={player.stats.wins}
-                                    losses={player.stats.losses}
-                                    kills={player.stats.kills}
-                                    deaths={player.stats.deaths}
-                                    assists={player.stats.assists}
-                                    money={player.stats.money}
-                                />
-                            </div>
-                        )
-                    })
-                }
+                <div
+                    className="flex flex-col gap-6">
+                    {
+                        data.players.items.map((player: any) => {
+                            count++;
+                            return (
+                                <div key={player.id}>
+                                    <PlayerStatsCard
+                                        id={player.id}
+                                        name={player.name}
+                                        image={player.avatar}
+                                        wins={player.stats.wins}
+                                        losses={player.stats.losses}
+                                        kills={player.stats.kills}
+                                        deaths={player.stats.deaths}
+                                        assists={player.stats.assists}
+                                        money={player.stats.money}
+                                    />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </section>
 
             {/* Footer */}

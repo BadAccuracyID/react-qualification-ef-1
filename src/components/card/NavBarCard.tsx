@@ -35,6 +35,9 @@ export default function NavBarCard() {
                 <Link to={'/search'}>
                     <li><a className="font-medium hover:text-gray-300">Check Stats</a></li>
                 </Link>
+                <Link to={'/favorites'}>
+                    <li><a className="font-medium hover:text-gray-300">Favorites</a></li>
+                </Link>
             </ul>
 
             <div>

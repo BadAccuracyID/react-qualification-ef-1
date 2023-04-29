@@ -18,7 +18,7 @@ export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, a
 }) {
     return (
         <div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white">
+            className="relative grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white h-max">
             <div
                 className="rounded-t-md rounded-b-md p-8 flex items-center justify-center">
                 <img
@@ -112,7 +112,7 @@ export function PlayerDetailsCard({id, name, image, motto, instagram, wins, loss
 
     return (
         <div
-            className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center">
+            className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center h-max">
 
             {user && user.favoritePlayers.includes(name) ?
                 <div className="absolute top-0 right-0 mt-4 mr-4">

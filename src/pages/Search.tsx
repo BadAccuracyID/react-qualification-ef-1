@@ -54,8 +54,7 @@ export default function Search() {
                         className="absolute top-0 right-0 flex items-center justify-center h-full w-12 text-gray-500 focus:outline-none"
                         onClick={() => {
                             setActualSearchTerm(searchTerm);
-                        }}
-                    >
+                        }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 absolute top-3 right-3 text-gray-500 mr-2"
@@ -64,8 +63,7 @@ export default function Search() {
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
+                            strokeLinejoin="round">
                             <circle cx="11" cy="11" r="8"/>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                         </svg>

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import All from "./pages/All";
 import {AuthContext} from "./lib/context/AccountContext";
 import {CurrentUser, login, logout} from "./lib/controller/AccountController";
+import {Favorites} from "./pages/Favorites";
 
 const httpLink = new HttpLink({
     uri: "http://localhost:8080/graphql", // Replace with your GraphQL API endpoint
@@ -55,6 +56,7 @@ function App() {
                         <Route path="/all" element={<All/>}/>
                         <Route path="/search" element={<Search/>}/>
                         <Route path="/player/:playerId" element={<PlayerDetail/>}/>
+                        <Route path="/favorites" element={<Favorites/>}/>
                     </Routes>
                 </BrowserRouter>
             </ApolloProvider>
