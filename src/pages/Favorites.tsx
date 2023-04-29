@@ -6,6 +6,7 @@ import {AuthContext} from "../lib/context/AccountContext";
 import {useQuery} from "@apollo/client";
 import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
 import {PlayerStatsCard} from "../components/card/PlayerDataCard";
+import {ArrowSmallLeftIcon, ArrowSmallRightIcon} from "@heroicons/react/20/solid";
 
 export const Favorites = () => {
     const {user} = useContext(AuthContext);
@@ -92,13 +93,13 @@ export const Favorites = () => {
                         <button
                             className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-l"
                             onClick={prevPage}>
-                            &lt;
+                            <ArrowSmallLeftIcon className="h-8 w-8"/>
                         </button>
                         <p className="text-l font-bold">Page: {page + 1} / {data.length < 10 ? 1 : data.length % 10 + 1}</p>
                         <button
                             className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-r"
                             onClick={nextPage}>
-                            &gt;
+                            <ArrowSmallRightIcon className="h-8 w-8"/>
                         </button>
                     </div>
                 </div>

@@ -2,9 +2,8 @@ import {Link} from "react-router-dom";
 import React, {useContext, useState} from "react";
 import {AuthContext} from "../../lib/context/AccountContext";
 import {StarIcon as StarIconOutline} from "@heroicons/react/24/outline";
-import {StarIcon as StarIconSolid} from "@heroicons/react/24/solid";
+import {ArrowLeftIcon, ArrowRightIcon, StarIcon as StarIconSolid} from "@heroicons/react/20/solid";
 import {saveUser} from "../../lib/controller/AccountController";
-import {ArrowLeftIcon} from "@heroicons/react/20/solid";
 
 export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, assists, money}: {
     id: string,
@@ -68,10 +67,7 @@ export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, a
                 <Link to={`/player/${id}`}>
                     <div
                         className="rounded-b-md sm:rounded-r-md sm:rounded-b-none p-8 flex items-center justify-center sm:justify-end h-max">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                        </svg>
+                        <ArrowRightIcon className="w-8 text-white"/>
                     </div>
                 </Link>
             </button>

@@ -1,14 +1,13 @@
 import FooterCard from "../components/card/FooterCard";
 import NavBarCard from "../components/card/NavBarCard";
 import {useQuery} from "@apollo/client";
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
-import {AuthContext} from "../lib/context/AccountContext";
+import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 
 export default function Search() {
-    const {user} = useContext(AuthContext);
     const [searchTerm, setSearchTerm] = useState('');
 
     const [actualSearchTerm, setActualSearchTerm] = useState('');
@@ -55,18 +54,7 @@ export default function Search() {
                         onClick={() => {
                             setActualSearchTerm(searchTerm);
                         }}>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 absolute top-3 right-3 text-gray-500 mr-2"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
+                        <MagnifyingGlassIcon className="h-6 w-6 absolute top-3 right-3 text-gray-500 mr-2"/>
                     </button>
                 </div>
                 {error && <p>Error: {error.message}</p>}
