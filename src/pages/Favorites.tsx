@@ -124,8 +124,41 @@ const FavoritePlayerDetailsCard = ({name}: { name: string }) => {
         variables: {name: name},
     });
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
+    if (loading) return (
+        <div
+            className="relative grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white h-max">
+            <div
+                className="rounded-t-md rounded-b-md p-8 flex items-center justify-center">
+                <img
+                    className="h-[180px] max-h-60 sm:max-h-full max-w-full object-cover"
+                    src="https://luckynet.work/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-logo.e22b7a94.png&w=640&q=75"
+                />
+            </div>
+
+            <div className="p-8 flex flex-col justify-center w-[300px]">
+                <h1 className="text-2xl font-bold">Loading...</h1>
+                <p className="text-xl">Loading...</p>
+            </div>
+        </div>
+    );
+    if (error) return (
+        <div
+            className="relative grid grid-cols-1 sm:grid-cols-3 gap-2 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white h-max">
+            <div
+                className="rounded-t-md rounded-b-md p-8 flex items-center justify-center">
+                <img
+                    className="h-[180px] max-h-60 sm:max-h-full max-w-full object-cover"
+                    src="https://luckynet.work/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-logo.e22b7a94.png&w=640&q=75"
+                />
+            </div>
+
+            <div className="p-8 flex flex-col justify-center w-[300px]">
+                <h1 className="text-2xl font-bold">Error</h1>
+                <p className="text-xl">{error.message}</p>
+            </div>
+        </div>
+    );
+
 
     let player = data.playerByName
     return (
