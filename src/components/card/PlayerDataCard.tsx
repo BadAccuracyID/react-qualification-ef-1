@@ -4,6 +4,7 @@ import {AuthContext} from "../../lib/context/AccountContext";
 import {StarIcon as StarIconOutline} from "@heroicons/react/24/outline";
 import {StarIcon as StarIconSolid} from "@heroicons/react/24/solid";
 import {saveUser} from "../../lib/controller/AccountController";
+import {ArrowLeftIcon} from "@heroicons/react/20/solid";
 
 export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, assists, money}: {
     id: string,
@@ -108,11 +109,21 @@ export function PlayerDetailsCard({id, name, image, motto, instagram, wins, loss
         setRefresh(!refresh);
     }
 
-    console.log(user)
+    const handleGoBack = () => {
+        window.history.back();
+    }
 
     return (
         <div
             className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center h-max">
+
+            <div className="absolute left-0 mt-4 ml-4">
+                <button
+                    className="focus:outline-none"
+                    onClick={handleGoBack}>
+                    <ArrowLeftIcon className="w-8 text-white"/>
+                </button>
+            </div>
 
             {user && user.favoritePlayers.includes(name) ?
                 <div className="absolute top-0 right-0 mt-4 mr-4">
