@@ -1,12 +1,15 @@
 import FooterCard from "../components/card/FooterCard";
 import NavBarCard from "../components/card/NavBarCard";
 import {useQuery} from "@apollo/client";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
+import {AuthContext} from "../lib/context/AccountContext";
+import {saveUser} from "../lib/controller/AccountController";
 
 export default function Search() {
+    const {user} = useContext(AuthContext);
     const [searchTerm, setSearchTerm] = useState('');
 
     const [actualSearchTerm, setActualSearchTerm] = useState('');
@@ -22,6 +25,11 @@ export default function Search() {
         if (e.key === 'Enter') {
             // Call your search function here with the current search term
             setActualSearchTerm(searchTerm);
+
+            // save to ls
+            user?.addFavoritePlayer(searchTerm);
+            saveUser(user!);
+            console.log(user)
         }
     }
 

@@ -7,7 +7,7 @@ import Search from "./pages/Search";
 import Home from "./pages/Home";
 import All from "./pages/All";
 import {AuthContext} from "./lib/context/AccountContext";
-import {CurrentUser, login} from "./lib/controller/AccountController";
+import {CurrentUser, login, logout} from "./lib/controller/AccountController";
 
 const httpLink = new HttpLink({
     uri: "http://localhost:8080/graphql", // Replace with your GraphQL API endpoint
@@ -32,27 +32,22 @@ function App() {
     });
 
     const loginFunction = (username: string, password: string) => {
-        let success = login(username, password)
-        if (!success) {
+        let newUser = login(username, password)
+        if (newUser === null) {
             return false;
         }
 
-        let newUser = {
-            username,
-        };
-
         setUser(newUser);
-        localStorage.setItem("user", JSON.stringify(newUser));
         return true;
     };
 
-    const logout = () => {
-        localStorage.removeItem("user");
+    const logoutFunction = () => {
+        logout();
         setUser(null);
-    };
+    }
 
     return (
-        <AuthContext.Provider value={{user, login: loginFunction, logout}}>
+        <AuthContext.Provider value={{user, login: loginFunction, logout: logoutFunction}}>
             <ApolloProvider client={client}>
                 <BrowserRouter>
                     <Routes>
