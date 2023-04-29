@@ -5,7 +5,6 @@ import particlesOptions from "./particles.json";
 import type {Engine} from "tsparticles-engine";
 import {ISourceOptions} from "tsparticles-engine";
 
-
 export default function ParticleBackground() {
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadFull(engine);

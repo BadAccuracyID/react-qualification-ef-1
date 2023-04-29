@@ -37,7 +37,10 @@ export default function All() {
 
     if (loading) {
         return (
-            <div className="bg-blue-900 text-white">
+            <div className="bg-transparent text-white">
+                {/* Particle Background */}
+                <ParticleBackground/>
+
                 {/* Navigation */}
                 <NavBarCard/>
 
@@ -50,7 +53,10 @@ export default function All() {
         )
     } else if (error) {
         return (
-            <div className="bg-blue-900 text-white">
+            <div className="bg-transparent text-white">
+                {/* Particle Background */}
+                <ParticleBackground/>
+
                 {/* Navigation */}
                 <NavBarCard/>
 
@@ -74,7 +80,7 @@ export default function All() {
             {/* Main Section */}
             <section className="grid grid-cols-1 gap-6 justify-items-center min-h-screen h-max p-8">
                 <div>
-                    <h1 className="text-4xl font-bold pb-4">All Players</h1>
+                    <h1 className="text-4xl font-bold pb-4 text-center">All Players</h1>
 
                     <div className="bg-blue-950 rounded-md flex flex-row justify-center items-center gap-4 max-h-10">
                         <button

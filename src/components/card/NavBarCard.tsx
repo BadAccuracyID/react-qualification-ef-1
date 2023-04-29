@@ -18,8 +18,6 @@ export default function NavBarCard() {
         logout();
     }
 
-    console.log(user)
-
     return (
         <nav className="flex items-center justify-between px-6 py-4 bg-blue-950">
             <ul className="flex items-center space-x-8 max-h-56 overflow-y-auto">
@@ -70,7 +68,7 @@ interface LoginModalProps {
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({isOpen, onClose}) => {
-    const {login: setLoggedInUser} = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -86,7 +84,7 @@ const LoginModal: React.FC<LoginModalProps> = ({isOpen, onClose}) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        let success = setLoggedInUser(username, password);
+        let success = login(username, password);
         if (!success) {
             alert('Invalid username or password');
         } else {

@@ -20,7 +20,10 @@ export default function PlayerDetail() {
 
     if (loading) {
         return (
-            <div className="bg-blue-900 text-white">
+            <div className="bg-transparent text-white">
+                {/* Particle Background */}
+                <ParticleBackground/>
+
                 {/* Navigation */}
                 <NavBarCard/>
 
@@ -33,7 +36,10 @@ export default function PlayerDetail() {
         )
     } else if (error) {
         return (
-            <div className="bg-blue-900 text-white">
+            <div className="bg-transparent text-white">
+                {/* Particle Background */}
+                <ParticleBackground/>
+
                 {/* Navigation */}
                 <NavBarCard/>
 
