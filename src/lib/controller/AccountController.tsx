@@ -1,9 +1,6 @@
 interface CurrentUser {
     username: string;
     favoritePlayers: string[];
-
-    addFavoritePlayer: (player: string) => void;
-    removeFavoritePlayer: (player: string) => void;
 }
 
 interface StoredCredentials {
@@ -32,17 +29,7 @@ function login(username: string, password: string): CurrentUser | null {
     // If the user exists and the password is correct, create a new CurrentUser object
     const user: CurrentUser = {
         username: storedCredentials.username,
-        favoritePlayers: storedCredentials.favoritePlayers,
-        addFavoritePlayer: (player: string) => {
-            user.favoritePlayers.push(player);
-            saveUser(user);
-        },
-        removeFavoritePlayer: (player: string) => {
-            user.favoritePlayers = user.favoritePlayers.filter(
-                (p) => p !== player
-            );
-            saveUser(user);
-        },
+        favoritePlayers: storedCredentials.favoritePlayers
     };
 
     // Load the user's favorite players from localStorage

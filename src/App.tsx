@@ -23,7 +23,7 @@ const client = new ApolloClient({
 
 function App() {
     const [user, setUser] = useState<CurrentUser | null>(() => {
-        const localUser = localStorage.getItem("user");
+        const localUser = localStorage.getItem("currentUser");
         if (localUser) {
             return JSON.parse(localUser);
         }

@@ -1,4 +1,9 @@
 import {Link} from "react-router-dom";
+import React, {useContext, useState} from "react";
+import {AuthContext} from "../../lib/context/AccountContext";
+import {StarIcon as StarIconOutline} from "@heroicons/react/24/outline";
+import {StarIcon as StarIconSolid} from "@heroicons/react/24/solid";
+import {saveUser} from "../../lib/controller/AccountController";
 
 export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, assists, money}: {
     id: string,
@@ -86,9 +91,48 @@ export function PlayerDetailsCard({id, name, image, motto, instagram, wins, loss
     assists: number,
     money: number
 }) {
+    const {user} = useContext(AuthContext);
+    const [refresh, setRefresh] = useState(false); // force refresh of component
+
+    const addFavoritePlayer = () => {
+        user!.favoritePlayers.push(name);
+        saveUser(user!);
+        setRefresh(!refresh);
+    }
+
+    const removeFavoritePlayer = () => {
+        user!.favoritePlayers = user!.favoritePlayers.filter(
+            (p) => p !== name
+        );
+        saveUser(user!);
+        setRefresh(!refresh);
+    }
+
+    console.log(user)
+
     return (
         <div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center">
+            className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 bg-blue-950 bg-opacity-90 rounded-md shadow-lg text-white justify-center justify-items-center">
+
+            {user && user.favoritePlayers.includes(name) ?
+                <div className="absolute top-0 right-0 mt-4 mr-4">
+                    <button
+                        className="focus:outline-none"
+                        onClick={removeFavoritePlayer}>
+                        <StarIconSolid className="w-8 text-yellow-500"/>
+                    </button>
+                </div>
+                : user ?
+                    <div className="absolute top-0 right-0 mt-4 mr-4">
+                        <button
+                            className="focus:outline-none"
+                            onClick={addFavoritePlayer}>
+                            <StarIconOutline className="w-8 text-yellow-500"/>
+                        </button>
+                    </div>
+                    :
+                    <></>
+            }
             <div
                 className="rounded-t-md sm:rounded-l-md sm:rounded-t-none sm:rounded-b-md p-8 pb-2 sm:pb-8 flex items-center justify-center sm:justify-start">
                 <img
