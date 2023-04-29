@@ -19,26 +19,26 @@ export default function NavBarCard() {
     }
 
     return (
-        <nav className="flex items-center justify-between px-6 py-4 bg-blue-950">
-            <ul className="flex items-center space-x-8 max-h-56 overflow-y-auto">
+        <nav className="flex items-center justify-between px-6 py-4 gap-6 bg-blue-950">
+            <div className="flex items-center text-center space-x-8 max-h-56 overflow-y-auto">
                 <img
                     src="https://luckynet.work/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-logo.e22b7a94.png&w=640&q=75"
                     alt="logo"
                     className="w-12 h-auto object-contain"
                 />
                 <Link to={'/'}>
-                    <li><a className="font-medium hover:text-gray-300">Home</a></li>
+                    <a className="font-medium hover:text-gray-300 w-max">Home</a>
                 </Link>
                 <Link to={'/all'}>
-                    <li><a className="font-medium hover:text-gray-300">All Stats</a></li>
+                    <a className="font-medium hover:text-gray-300">All Stats</a>
                 </Link>
                 <Link to={'/search'}>
-                    <li><a className="font-medium hover:text-gray-300">Check Stats</a></li>
+                    <a className="font-medium hover:text-gray-300">Check Stats</a>
                 </Link>
                 <Link to={'/favorites'}>
-                    <li><a className="font-medium hover:text-gray-300">Favorites</a></li>
+                    <a className="font-medium hover:text-gray-300">Favorites</a>
                 </Link>
-            </ul>
+            </div>
 
             <div>
                 {
