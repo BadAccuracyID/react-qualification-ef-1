@@ -1,5 +1,5 @@
 import './App.css';
-import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from "@apollo/client";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React, {useState} from 'react';
 import PlayerDetail from "./pages/PlayerDetail";
@@ -10,9 +10,13 @@ import {AuthContext} from "./lib/context/AccountContext";
 import {CurrentUser, login, logout} from "./lib/controller/AccountController";
 import {Favorites} from "./pages/Favorites";
 
+const httpLink = new HttpLink({
+    uri: "http://103.52.115.61:8080/graphql"
+});
+
 const client = new ApolloClient({
-    uri: "http://103.52.115.61:8080/grapgql",
     cache: new InMemoryCache(),
+    link: httpLink,
 });
 
 function App() {
