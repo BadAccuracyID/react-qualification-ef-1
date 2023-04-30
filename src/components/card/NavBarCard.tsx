@@ -6,7 +6,7 @@ export default function NavBarCard() {
     const {user, logout} = useContext(AuthContext);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
-    const handleProfileClick = () => {
+    const handleLoginClick = () => {
         setIsLoginModalOpen(true);
     }
 
@@ -53,7 +53,7 @@ export default function NavBarCard() {
                         :
                         <button
                             className="font-medium hover:text-gray-300"
-                            onClick={handleProfileClick}>
+                            onClick={handleLoginClick}>
                             Login
                         </button>
                 }
@@ -135,8 +135,7 @@ const LoginModal: React.FC<LoginModalProps> = ({isOpen, onClose}) => {
                         />
                     </div>
 
-                    <div
-                        className="flex flex-row justify-center">
+                    <div className="flex flex-row justify-center">
                         <button type="submit"
                                 className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition-colors duration-300">
                             Submit

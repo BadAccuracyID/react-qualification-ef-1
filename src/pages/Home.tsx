@@ -35,6 +35,12 @@ export default function Home() {
                             Check Player Stats
                         </button>
                     </Link>
+                    <Link to={'/favorites'}>
+                        <button
+                            className="w-full sm:w-auto px-8 py-3 text-base sm:text-xl font-medium bg-blue-950 hover:bg-purple-700 rounded-full transition-colors duration-300">
+                            View Favorites
+                        </button>
+                    </Link>
                 </section>
             </section>
 
