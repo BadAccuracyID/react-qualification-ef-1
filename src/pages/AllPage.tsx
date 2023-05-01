@@ -1,15 +1,15 @@
 import React, {useState} from "react";
-import NavBarCard from "../components/card/NavBarCard";
 import {useQuery} from "@apollo/client";
-import {GET_ALL_PLAYERS} from "../lib/queries/GetAllPlayers";
+import {GET_ALL_PLAYERS} from "../lib/queries/GetAllPlayersQuery";
+import NavBarCard from "../components/card/global/NavBarCard";
 import LoadingCard from "../components/card/LoadingCard";
 import ErrorCard from "../components/card/ErrorCard";
-import FooterCard from "../components/card/FooterCard";
+import FooterCard from "../components/card/global/FooterCard";
 import {PlayerStatsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
 import PaginationCard from "../components/card/PaginationCard";
 
-export default function All() {
+export default function AllPage() {
     const [page, setPage] = useState(0);
     const {loading, error, data} = useQuery(GET_ALL_PLAYERS, {
         variables: {

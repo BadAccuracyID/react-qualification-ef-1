@@ -1,14 +1,14 @@
 import './App.css';
+import React, {useState} from 'react';
 import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from "@apollo/client";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import React, {useState} from 'react';
-import PlayerDetail from "./pages/PlayerDetail";
-import Search from "./pages/Search";
-import Home from "./pages/Home";
-import All from "./pages/All";
+import AllPage from "./pages/AllPage";
+import HomePage from "./pages/HomePage";
+import SearchPage from "./pages/SearchPage";
+import {FavoritesPage} from "./pages/FavoritesPage";
+import PlayerDetailPage from "./pages/PlayerDetailPage";
 import {AuthContext} from "./lib/context/AccountContext";
 import {CurrentUser, login, logout} from "./lib/controller/AccountController";
-import {Favorites} from "./pages/Favorites";
 
 const httpLink = new HttpLink({
     uri: "https://backef.stormznet.com/graphql"
@@ -49,11 +49,11 @@ function App() {
             <ApolloProvider client={client}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/all" element={<All/>}/>
-                        <Route path="/search" element={<Search/>}/>
-                        <Route path="/player/:playerId" element={<PlayerDetail/>}/>
-                        <Route path="/favorites" element={<Favorites/>}/>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/all" element={<AllPage/>}/>
+                        <Route path="/search" element={<SearchPage/>}/>
+                        <Route path="/player/:playerId" element={<PlayerDetailPage/>}/>
+                        <Route path="/favorites" element={<FavoritesPage/>}/>
                     </Routes>
                 </BrowserRouter>
             </ApolloProvider>

@@ -1,13 +1,13 @@
-import FooterCard from "../components/card/FooterCard";
-import NavBarCard from "../components/card/NavBarCard";
-import {useQuery} from "@apollo/client";
 import React, {useState} from "react";
-import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
+import {useQuery} from "@apollo/client";
+import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
+import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetailsQuery";
+import FooterCard from "../components/card/global/FooterCard";
+import NavBarCard from "../components/card/global/NavBarCard";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
-import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 
-export default function Search() {
+export default function SearchPage() {
     const [searchTerm, setSearchTerm] = useState('');
 
     const [actualSearchTerm, setActualSearchTerm] = useState('');
@@ -38,7 +38,7 @@ export default function Search() {
             <section
                 className="flex flex-col items-center justify-center min-h-screen h-max px-6 sm:px-0 py-8">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-center">
-                    Search for a Player
+                    SearchPage for a Player
                 </h1>
                 <div className="relative w-full max-w-md">
                     <input
@@ -47,7 +47,7 @@ export default function Search() {
                         onChange={handleSearch}
                         onKeyDown={handleKeyDown}
                         className="w-full h-12 px-4 text-lg rounded-full bg-gray-800 text-white focus:outline-none"
-                        placeholder="Search for a player..."
+                        placeholder="SearchPage for a player..."
                     />
                     <button
                         className="absolute top-0 right-0 flex items-center justify-center h-full w-12 text-gray-500 focus:outline-none"
@@ -57,7 +57,16 @@ export default function Search() {
                         <MagnifyingGlassIcon className="h-6 w-6 absolute top-3 right-3 text-gray-500 mr-2"/>
                     </button>
                 </div>
-                {error && <p>Error: {error.message}</p>}
+                {error && (
+                    <div className="p-8">
+                        <p className="text-xl sm:text-2xl font-bold mb-8 text-center text-red-600">Error: {error.message}</p>
+                    </div>
+                )}
+                {loading && (
+                    <div className="p-8">
+                        <p className="text-xl sm:text-2xl font-bold mb-8 text-center text-gray-600">Loading...</p>
+                    </div>
+                )}
                 {data && data.playerByName && (
                     <div className="p-8">
                         <PlayerDetailsCard

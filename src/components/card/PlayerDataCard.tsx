@@ -1,8 +1,8 @@
-import {Link} from "react-router-dom";
 import React, {useContext, useState} from "react";
-import {AuthContext} from "../../lib/context/AccountContext";
-import {StarIcon as StarIconOutline} from "@heroicons/react/24/outline";
+import {Link} from "react-router-dom";
 import {ArrowLeftIcon, ArrowRightIcon, StarIcon as StarIconSolid} from "@heroicons/react/20/solid";
+import {StarIcon as StarIconOutline} from "@heroicons/react/24/outline";
+import {AuthContext} from "../../lib/context/AccountContext";
 import {saveUser} from "../../lib/controller/AccountController";
 
 export function PlayerStatsCard({id, name, image, wins, losses, kills, deaths, assists, money}: {

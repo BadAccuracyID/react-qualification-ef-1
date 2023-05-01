@@ -1,14 +1,14 @@
 import React, {useContext, useState} from "react";
-import FooterCard from "../components/card/FooterCard";
-import ParticleBackground from "../components/background/ParticleBackground";
-import NavBarCard from "../components/card/NavBarCard";
-import {AuthContext} from "../lib/context/AccountContext";
 import {useQuery} from "@apollo/client";
-import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetails";
+import {AuthContext} from "../lib/context/AccountContext";
+import {GET_PLAYER_DETAILS_BY_NAME} from "../lib/queries/GetPlayerDetailsQuery";
+import FooterCard from "../components/card/global/FooterCard";
+import ParticleBackground from "../components/background/ParticleBackground";
+import NavBarCard from "../components/card/global/NavBarCard";
 import {PlayerStatsCard} from "../components/card/PlayerDataCard";
 import PaginationCard from "../components/card/PaginationCard";
 
-export const Favorites = () => {
+export const FavoritesPage = () => {
     const {user} = useContext(AuthContext);
     const [page, setPage] = useState(0);
 

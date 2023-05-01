@@ -1,5 +1,5 @@
-import {ArrowSmallLeftIcon, ArrowSmallRightIcon} from "@heroicons/react/20/solid";
 import React from "react";
+import {ArrowSmallLeftIcon, ArrowSmallRightIcon} from "@heroicons/react/20/solid";
 
 type Props = {
     page: number;

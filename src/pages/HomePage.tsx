@@ -1,10 +1,10 @@
 import React from "react";
-import NavBarCard from "../components/card/NavBarCard";
-import FooterCard from "../components/card/FooterCard";
-import ParticleBackground from "../components/background/ParticleBackground";
 import {Link} from "react-router-dom";
+import NavBarCard from "../components/card/global/NavBarCard";
+import FooterCard from "../components/card/global/FooterCard";
+import ParticleBackground from "../components/background/ParticleBackground";
 
-export default function Home() {
+export default function HomePage() {
     return (
         <div className="bg-transparent text-white">
             {/* Particle Background */}

@@ -1,6 +1,6 @@
-import {Link} from 'react-router-dom';
 import React, {useContext, useState} from "react";
-import {AuthContext} from "../../lib/context/AccountContext";
+import {Link} from 'react-router-dom';
+import {AuthContext} from "../../../lib/context/AccountContext";
 
 export default function NavBarCard() {
     const {user, logout} = useContext(AuthContext);

@@ -1,15 +1,15 @@
+import React from "react";
 import {useParams} from "react-router-dom";
 import {useQuery} from "@apollo/client";
-import {GET_PLAYER_DETAILS_BY_ID} from "../lib/queries/GetPlayerDetails";
-import NavBarCard from "../components/card/NavBarCard";
+import {GET_PLAYER_DETAILS_BY_ID} from "../lib/queries/GetPlayerDetailsQuery";
+import NavBarCard from "../components/card/global/NavBarCard";
 import LoadingCard from "../components/card/LoadingCard";
-import FooterCard from "../components/card/FooterCard";
+import FooterCard from "../components/card/global/FooterCard";
 import ErrorCard from "../components/card/ErrorCard";
-import React from "react";
 import {PlayerDetailsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
 
-export default function PlayerDetail() {
+export default function PlayerDetailPage() {
     const {playerId} = useParams();
     console.log(playerId);
     const {loading, error, data} = useQuery(GET_PLAYER_DETAILS_BY_ID, {
