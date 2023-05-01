@@ -38,7 +38,7 @@ export default function SearchPage() {
             <section
                 className="flex flex-col items-center justify-center min-h-screen h-max px-6 sm:px-0 py-8">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-center">
-                    SearchPage for a Player
+                    Search for a Player
                 </h1>
                 <div className="relative w-full max-w-md">
                     <input
