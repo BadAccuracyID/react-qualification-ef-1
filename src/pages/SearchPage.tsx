@@ -47,7 +47,7 @@ export default function SearchPage() {
                         onChange={handleSearch}
                         onKeyDown={handleKeyDown}
                         className="w-full h-12 px-4 text-lg rounded-full bg-gray-800 text-white focus:outline-none"
-                        placeholder="SearchPage for a player..."
+                        placeholder="Search for a player..."
                     />
                     <button
                         className="absolute top-0 right-0 flex items-center justify-center h-full w-12 text-gray-500 focus:outline-none"
