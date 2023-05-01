@@ -7,8 +7,7 @@ import ErrorCard from "../components/card/ErrorCard";
 import FooterCard from "../components/card/FooterCard";
 import {PlayerStatsCard} from "../components/card/PlayerDataCard";
 import ParticleBackground from "../components/background/ParticleBackground";
-import {ArrowSmallLeftIcon} from "@heroicons/react/20/solid";
-import {ArrowSmallRightIcon} from "@heroicons/react/20/solid";
+import PaginationCard from "../components/card/PaginationCard";
 
 export default function All() {
     const [page, setPage] = useState(0);
@@ -85,21 +84,13 @@ export default function All() {
                     className="flex flex-col justify-center justify-items-center items-center h-max">
                     <h1 className="text-4xl font-bold pb-4 text-center">All Players</h1>
 
-                    <div className="bg-blue-950 rounded-md flex flex-row justify-center items-center gap-4 w-max">
-                        <button
-                            className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-l"
-                            onClick={prevPage}>
-                            <ArrowSmallLeftIcon className="h-8 w-8"/>
-                        </button>
-                        <p className="text-l font-bold">Page: {page + 1} / {data.players.totalCount < 10 ? 1 : data.players.totalCount % 10 + 1}</p>
-                        <button
-                            className="hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-r"
-                            onClick={nextPage}>
-                            <ArrowSmallRightIcon className="h-8 w-8"/>
-                        </button>
-                    </div>
+                    <PaginationCard page={page}
+                                    totalCount={data.players.totalCount}
+                                    mod={10}
+                                    prevPage={prevPage}
+                                    nextPage={nextPage}
+                    />
                 </div>
-
 
                 <div
                     className="flex flex-col gap-6">
@@ -124,6 +115,13 @@ export default function All() {
                         })
                     }
                 </div>
+
+                <PaginationCard page={page}
+                                totalCount={data.players.totalCount}
+                                mod={10}
+                                prevPage={prevPage}
+                                nextPage={nextPage}
+                />
             </section>
 
             {/* Footer */}
