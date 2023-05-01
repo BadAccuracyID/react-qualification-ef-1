@@ -19,49 +19,51 @@ export default function NavBarCard() {
     }
 
     return (
-        <nav className="flex items-center justify-between px-6 py-4 gap-6 bg-blue-950">
-            <div className="flex items-center text-center space-x-8 max-h-56 overflow-y-auto">
-                <img
-                    src="https://luckynet.work/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-logo.e22b7a94.png&w=640&q=75"
-                    alt="logo"
-                    className="w-12 h-auto object-contain"
-                />
-                <Link to={'/'}>
-                    <a className="font-medium hover:text-gray-300 w-max">Home</a>
-                </Link>
-                <Link to={'/all'}>
-                    <a className="font-medium hover:text-gray-300">All Stats</a>
-                </Link>
-                <Link to={'/search'}>
-                    <a className="font-medium hover:text-gray-300">Check Stats</a>
-                </Link>
-                <Link to={'/favorites'}>
-                    <a className="font-medium hover:text-gray-300">Favorites</a>
-                </Link>
-            </div>
+        <div className="pb-20">
+            <nav
+                className="navbar fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-4 gap-6 bg-blue-950 w-full z-50">
+                <div className="flex items-center text-center space-x-8 max-h-56 overflow-y-auto">
+                    <img
+                        src="https://luckynet.work/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-logo.e22b7a94.png&w=640&q=75"
+                        alt="logo"
+                        className="w-12 h-auto object-contain"
+                    />
+                    <Link to={'/'}>
+                        <a className="font-medium hover:text-gray-300 w-max">Home</a>
+                    </Link>
+                    <Link to={'/all'}>
+                        <a className="font-medium hover:text-gray-300">All Stats</a>
+                    </Link>
+                    <Link to={'/search'}>
+                        <a className="font-medium hover:text-gray-300">Check Stats</a>
+                    </Link>
+                    <Link to={'/favorites'}>
+                        <a className="font-medium hover:text-gray-300">Favorites</a>
+                    </Link>
+                </div>
 
-            <div>
-                {
-                    user ?
-                        <div>
+                <div>
+                    {
+                        user ?
+                            <div>
+                                <button
+                                    className="font-medium hover:text-gray-300"
+                                    onClick={handleLogout}>
+                                    {user.username}
+                                </button>
+                            </div>
+                            :
                             <button
                                 className="font-medium hover:text-gray-300"
-                                onClick={handleLogout}>
-                                {user.username}
+                                onClick={handleLoginClick}>
+                                Login
                             </button>
-                        </div>
-                        :
-                        <button
-                            className="font-medium hover:text-gray-300"
-                            onClick={handleLoginClick}>
-                            Login
-                        </button>
-                }
-            </div>
+                    }
+                </div>
 
-            <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose}/>
-        </nav>
-
+                <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose}/>
+            </nav>
+        </div>
     )
 }
 
