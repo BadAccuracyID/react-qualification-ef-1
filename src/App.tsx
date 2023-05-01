@@ -11,7 +11,7 @@ import {CurrentUser, login, logout} from "./lib/controller/AccountController";
 import {Favorites} from "./pages/Favorites";
 
 const httpLink = new HttpLink({
-    uri: "http://103.52.115.61:8080/graphql"
+    uri: "https://backef.stormznet.com/graphql"
 });
 
 const client = new ApolloClient({
