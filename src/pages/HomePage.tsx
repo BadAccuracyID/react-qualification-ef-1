@@ -16,10 +16,10 @@ export default function HomePage() {
             {/* Main Section */}
             <section className="flex flex-col items-center justify-center h-screen px-6 sm:px-0">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-8 text-center">
-                    Welcome to Stats Viewer
+                    Welcome to InsightEFul Stats
                 </h1>
                 <p className="text-lg sm:text-xl text-center">
-                    You can check your stats or other player's stats here
+                    An insightEFul website for viewing Player Stats
                 </p>
                 <section
                     className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
